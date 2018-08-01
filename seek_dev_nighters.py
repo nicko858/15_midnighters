@@ -28,9 +28,9 @@ def load_attempts(api_url):
             timestamp = record["timestamp"]
             timezone = record["timezone"]
             yield {
-                'username': username,
-                'timestamp': timestamp,
-                'timezone': timezone,
+                "username": username,
+                "timestamp": timestamp,
+                "timezone": timezone,
             }
 
 
@@ -51,11 +51,11 @@ def print_midnighter_activity(midnighter_activity):
     for username, user_dt in midnighter_activity.items():
         print("User {} sent the tasks for review at: \n{}\n".format(
             username,
-            '\n'.join(user_dt)
+            "\n".join(user_dt)
         ))
 
 
-if __name__ == '__main__': 
+if __name__ == "__main__": 
     api_url = "https://devman.org/api/challenges/solution_attempts/"
     title_was_printed = False
     midnighters_activity = defaultdict(list)
