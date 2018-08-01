@@ -7,13 +7,10 @@ from collections import defaultdict
 
 def load_attempts(api_url):
     page = 1
-    first_iteration = True
+    pages_count = 1
     while True:
-        if first_iteration:
-            first_iteration = False
-        else:
-            if page > pages_count:
-                break
+        if page > pages_count:
+            break
         params = {"page": page}
         try:
             response = requests.get(api_url, params=params)
